@@ -1,0 +1,44 @@
+{
+  "name": "myapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "pre-commit": "lint-staged",
+    "lint:fix": "eslint --fix \"**/*.{js,jsx}\" && prettier --write \"**/*.{js,jsx,json,css,md}\"",
+    "lint": "eslint \"**/*.{js,jsx}\" && prettier --check \"**/*.{js,jsx,json,css,md}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2"
+  }
+}
