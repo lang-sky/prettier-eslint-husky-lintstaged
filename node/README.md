@@ -14,8 +14,8 @@ yarn add -D babel-eslint prettier eslint-plugin-prettier eslint-config-prettier 
 {
   "scripts": {
     "pre-commit": "lint-staged",
-    "lint:fix": "eslint --fix \"**/*.{js,jsx}\" && prettier --write \"**/*.{js,jsx,json,css,md}\"",
-    "lint": "eslint \"**/*.{js,jsx}\" && prettier --check \"**/*.{js,jsx,json,css,md}\""
+    "lint:fix": "eslint --fix \"**/*.js\" && prettier --write \"**/*.{js,jsx,json,css,md}\"",
+    "lint": "eslint \"**/*.js\" && prettier --check \"**/*.{js,jsx,json,css,md}\""
   },
   "husky": {
     "hooks": {
@@ -23,7 +23,7 @@ yarn add -D babel-eslint prettier eslint-plugin-prettier eslint-config-prettier 
     }
   },
   "lint-staged": {
-    "*.+(js|jsx)": ["eslint --fix", "prettier --write --ignore-unknown"],
+    "*.js": ["eslint --fix", "prettier --write --ignore-unknown"],
     "*.+(json|css|md)": ["prettier --write"]
   }
 }
