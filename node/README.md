@@ -36,20 +36,17 @@ Create a file `.eslintrc.js` and copy the following
 ```js
 module.exports = {
   env: {
-    browser: true,
-    es2021: true,
+    browser: false,
+    es6: true,
     node: true,
   },
-  extends: ['airbnb', 'airbnb/hooks', 'plugin:prettier/recommended', 'prettier'],
+  extends: ['airbnb-base', 'plugin:prettier/recommended', 'prettier'],
   parser: 'babel-eslint',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['prettier'],
   rules: {
     'prettier/prettier': 1,
     'linebreak-style': ['error', 'unix'],
@@ -92,6 +89,24 @@ Create a file `.vscode/settings.json` and copy the following
 
 ```json
 {
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
 ```
