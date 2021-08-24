@@ -1,0 +1,10 @@
+__mocks__/
+nginx/
+node_modules/
+.babelrc
+.gitignore
+docker-compose.yml
+Dockerfile
+package-lock.json
+private.key
+yarn.lock
